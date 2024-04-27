@@ -1,0 +1,142 @@
+* {
+  box-sizing: border-box;
+}
+*::after {
+  box-sizing: border-box;
+}
+*::before {
+  box-sizing: border-box;
+}
+
+html {
+  color: #ffffff;
+  font-size: 1em;
+  line-height: 1.2em;
+  background: #101313;
+  margin: 0;
+  height: 100%;
+}
+
+@font-face {
+  font-family: "Haext Bold";
+  src: url("../font/Haext Pen.otf") format("opentype");
+}
+
+body {
+  margin: 0;
+  display: flex;
+  flex-direction: column;
+  min-height: 100%;
+  overflow: hidden;
+  animation: bg-animation 5s infinite linear;
+  background: radial-gradient(circle, #0e0706 0%, #070301 100%);
+}
+
+body:before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-image: url("../img/bg.png");
+  z-index: 0;
+  animation: rune-animation 10s infinite linear;
+  pointer-events: none;
+}
+
+@keyframes rune-animation {
+  0% {background-position: 0px 0px}
+  100% {background-position: 0px 180px}
+}
+
+main, header, footer {
+  z-index: 1;
+  width: 1440px;
+  margin: 0 auto;
+}
+
+footer {
+  height: 110px;
+  text-align: center;
+  font-size: 150%;
+}
+
+header {
+  padding: 40px 0;
+  display: flex;
+  align-items: center;
+  height: 110px;
+}
+
+header .brand {
+  display: flex;
+  align-items: center;
+}
+
+header .links {
+  flex-grow: 1;
+  text-align: right;
+  font-size: 150%;
+  display: flex;
+  align-items: center;
+  justify-content: end;
+  height: 110px;
+}
+
+header .links a {
+  color: #eeeeee;
+  text-decoration: none;
+  font-size: 150%;
+  line-height: 0;
+}
+
+header img {
+  margin-right: 20px;
+}
+
+main {
+  flex-grow: 1;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  pointer-events: none;
+  user-select: none;
+}
+
+h2, footer {
+  font-weight: normal;
+  font-family: "Haext Bold", sans-serif;
+  vertical-align: text-bottom;
+}
+
+h2 {
+  text-align: center;
+  font-size: 280%;
+  color: #ffbe31;
+  line-height: 1.5em;
+}
+
+@media(max-width: 1440px) {
+  header, main, footer {
+    width: 100%;
+    padding: 40px;
+    min-width: 400px;
+  }
+
+  footer {
+    font-size: 130%;
+  }
+
+  h2 {
+    font-size: 250%;
+  }
+}
+
+.trail {
+  position: absolute;
+  z-index: 1000;
+  font-family: sans-serif;
+  font-size: 150%;
+  pointer-events: none;
+}
